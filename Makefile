@@ -1,10 +1,12 @@
+include .env
+
 run:
-	docker run -p 3000:3000 --name sample --mount "type=bind,src=$(HOME)/workspace/react/sample,target=/sample" sample
+	docker run -p 3000:3000 --name ${CONTAINER_NAME} --mount "type=bind,src=$(HOME)/workspace/react/sample,target=/sample" ${IMAGE_NAME}
 
 up:
-	docker build -t sample .
+	docker build -t ${IMAGE_NAME} .
 	make run
 
 down:
-	docker stop sample
-	docker rm sample
+	docker stop ${CONTAINER_NAME}
+	docker rm ${CONTAINER_NAME}
