@@ -1,7 +1,7 @@
 include .env
 
 run:
-	docker run -p 3000:3000 --name ${CONTAINER_NAME} --mount "type=bind,src=$(HOME)/workspace/react/sample,target=/sample" ${IMAGE_NAME}
+	docker run -p 3000:3000 --name ${CONTAINER_NAME} --mount "type=bind,src=${APP_PATH},target=/sample" ${IMAGE_NAME}
 
 up:
 	docker build -t ${IMAGE_NAME} .
