@@ -6,4 +6,3 @@ make up
 
 # コンテナの停止・削除
 make down
-```
