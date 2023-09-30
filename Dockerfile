@@ -1,5 +1,5 @@
 FROM node:lts
-WORKDIR /sample
+WORKDIR /${APP_NAME}
 COPY package*.json ./
 RUN npm install
 COPY . .
