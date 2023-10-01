@@ -9,10 +9,32 @@ CONTAINER_NAME=コンテナ名
 ```
 
 ### 手順2
+package.jsonの以下の箇所を編集
+```
+{
+  "name": "sample", // <= "sample"を"アプリ名"に変更
+```
+package-lock.jsonの以下の箇所(2行目と8行目)を編集
+```
+   "name": "sample", // <= "Sample"を"アプリ名"に変更
+
+		"name": "sample", // <= "Sample"を"アプリ名"に変更
+```
+
+manifest.jsonの以下の箇所を編集
+```
+  "name": "Create React App Sample", // <= "Sample"を"アプリ名"に変更
+```
+
+### 手順3
 以下コマンドを実行。
-```` 
-# コンテナ立ち上げ
+``` 
+# イメージビルド+コンテナ立ち上げ
 make up
+
+# コンテナ立ち上げ
+make run
 
 # コンテナの停止・削除
 make down
+```
